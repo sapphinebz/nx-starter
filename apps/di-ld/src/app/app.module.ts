@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppsHttpModule } from '@web-di-ld/apps/http';
+import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,6 +15,7 @@ import { AppsHttpModule } from '@web-di-ld/apps/http';
     TranslocoRootModule,
     BrowserAnimationsModule,
     AppsHttpModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
