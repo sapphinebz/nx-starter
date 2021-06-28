@@ -23,8 +23,8 @@
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-!.vscode/typescript.code-snippets
-!.vscode/html.code-snippets
+!.vscode/i18n.code-snippets
+!.vscode/http.code-snippets
 
 # misc
 /.sass-cache
