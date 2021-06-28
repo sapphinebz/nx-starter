@@ -75,6 +75,7 @@
     "description": "เปลี่ยนภาษาที่ใช้งานปัจจุบัน มันจะไป trick directive ที่ template ให้ด้วย"
   },
   "i18n-langChanges$": {
+    "scope": "javascript,typescript",
     "prefix": "i18n-langChanges$",
     "body": [
       "    this.translocoService.langChanges$.subscribe((lang) => {",
@@ -84,6 +85,7 @@
     "description": "Observable ปล่อยค่าภาษาที่เปลี่ยน แต่ยังไม่ถูก load นะ"
   },
   "i18n-selectTranslation": {
+    "scope": "javascript,typescript",
     "prefix": "i18n-selectTranslation",
     "body": [
       "    this.translocoService.selectTranslation().subscribe((translation) => {",
