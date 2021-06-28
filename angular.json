@@ -1,6 +1,27 @@
 {
   "version": 1,
   "projects": {
+    "api-interface": {
+      "root": "libs/api-interface",
+      "sourceRoot": "libs/api-interface/src",
+      "projectType": "library",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/api-interface/**/*.ts"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/api-interface"],
+          "options": {
+            "jestConfig": "libs/api-interface/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
     "di-ld": {
       "projectType": "application",
       "root": "apps/di-ld",
@@ -18,7 +39,12 @@
             "tsConfig": "apps/di-ld/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["apps/di-ld/src/favicon.ico", "apps/di-ld/src/assets"],
-            "styles": ["apps/di-ld/src/styles.scss"],
+            "styles": [
+              "apps/di-ld/src/styles.scss",
+              "node_modules/primeng/resources/themes/saga-blue/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "node_modules/primeicons/primeicons.css"
+            ],
             "scripts": []
           },
           "configurations": {

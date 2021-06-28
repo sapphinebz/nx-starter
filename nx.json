@@ -19,6 +19,9 @@
     }
   },
   "projects": {
+    "api-interface": {
+      "tags": []
+    },
     "di-ld": {
       "tags": []
     },
