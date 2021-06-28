@@ -63,7 +63,15 @@
             "polyfills": "apps/di-ld/src/polyfills.ts",
             "tsConfig": "apps/di-ld/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["apps/di-ld/src/favicon.ico", "apps/di-ld/src/assets"],
+            "assets": [
+              "apps/di-ld/src/favicon.ico",
+              "apps/di-ld/src/assets",
+              {
+                "glob": "**/*",
+                "input": "./assets/",
+                "output": "./assets"
+              }
+            ],
             "styles": [
               "apps/di-ld/src/styles.scss",
               "node_modules/primeng/resources/themes/saga-blue/theme.css",
