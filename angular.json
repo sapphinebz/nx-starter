@@ -22,6 +22,31 @@
         }
       }
     },
+    "apps-http": {
+      "projectType": "library",
+      "root": "libs/apps/http",
+      "sourceRoot": "libs/apps/http/src",
+      "prefix": "web-di-ld",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/apps/http"],
+          "options": {
+            "jestConfig": "libs/apps/http/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/apps/http/src/**/*.ts",
+              "libs/apps/http/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "di-ld": {
       "projectType": "application",
       "root": "apps/di-ld",

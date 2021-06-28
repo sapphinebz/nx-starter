@@ -22,6 +22,9 @@
     "api-interface": {
       "tags": []
     },
+    "apps-http": {
+      "tags": []
+    },
     "di-ld": {
       "tags": []
     },

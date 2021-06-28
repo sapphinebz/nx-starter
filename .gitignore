@@ -24,6 +24,7 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 !.vscode/typescript.code-snippets
+!.vscode/html.code-snippets
 
 # misc
 /.sass-cache

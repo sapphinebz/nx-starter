@@ -15,7 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@web-di-ld/api-interface": ["libs/api-interface/src/index.ts"]
+      "@environments/*": ["apps/di-ld/src/environments/*"],
+      "@web-di-ld/api-interface": ["libs/api-interface/src/index.ts"],
+      "@web-di-ld/apps/http": ["libs/apps/http/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
