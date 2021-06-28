@@ -6,10 +6,120 @@
   // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
   // Placeholders with the same ids are connected.
   // Example:
-  "Print to console": {
+  // "Print to console": {
+  //   "scope": "javascript,typescript",
+  //   "prefix": "project-log",
+  //   "body": ["console.log('$1');", "$2"],
+  //   "description": "Log output to console"
+  // },
+  // --- transloco i18n version ---
+  "i18n-inject-TranslocoService": {
     "scope": "javascript,typescript",
-    "prefix": "project-log",
-    "body": ["console.log('$1');", "$2"],
-    "description": "Log output to console"
+    "prefix": ["i18n-inject-TranslocoService"],
+    "body": ["private translocoService: TranslocoService$0"],
+    "description": "inject Transloco Service ไว้ใช้งาน i18n ที่ constructor"
+  },
+  "i18n-translation-load": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-translation-load",
+    "body": [
+      "this.translocoService.load(${1|'th','en'|}).subscribe(() => {",
+      "      console.log(this.translocoService.translate('hello'));",
+      "      console.log(this.translocoService.translate('apple', { count: 10 }));",
+      "    });$0"
+    ],
+    "description": "สั่งให้โหลดภาษา มันจะไปปล่อย event ให้กับ event$ ใน TranslocoService ด้วย"
+  },
+  "i18n-translate": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-translate",
+    "body": ["this.translocoService.translate('${1:hello}');$0"],
+    "description": "แปลภาษาตาม ActiveLang ปัจจุบัน ต้อง load lang ก่อนทุกครั้งก่อนใช้"
+  },
+  "i18n-getAvailableLangs": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-getAvailableLangs",
+    "body": [
+      "const availableLangs = this.translocoService.getAvailableLangs();$0"
+    ],
+    "description": "มีภาษาอะไรให้เลือกบ้างใน i18n"
+  },
+  "i18n-selectTranslate": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-selectTranslate",
+    "body": [
+      "this.translocoService",
+      "      .selectTranslate('${1:hello}', {}, ${2|'th','en'|})",
+      "      .subscribe((translation) => {",
+      "        ${3:console.log(translation);}",
+      "      });$0"
+    ],
+    "description": "แปลภาษาแบบให้โหลดทันที ถ้าแปลหลายคำให้ใช้ snippet ต่อท้าย multiple"
+  },
+  "i18n-selectTranslate-multiple": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-selectTranslate-multiple",
+    "body": [
+      "    this.translationService.transloco",
+      "          .selectTranslate(['${1:hello}','${2:apple}'], ${3:{count:10\\}}, ${4|'th','en'|}))",
+      "          .subscribe((translation) => {",
+      "            ${5:console.log(translation);}",
+      "          });$0"
+    ],
+    "description": "แปลภาษาแบบให้โหลดทันที แบบหลายคำพร้อมกัน"
+  },
+  "i18n-setActiveLang": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-setActiveLang",
+    "body": ["this.translocoService.setActiveLang(${1:lang});$0"],
+    "description": "เปลี่ยนภาษาที่ใช้งานปัจจุบัน มันจะไป trick directive ที่ template ให้ด้วย"
+  },
+  "i18n-langChanges$": {
+    "prefix": "i18n-langChanges$",
+    "body": [
+      "    this.translocoService.langChanges$.subscribe((lang) => {",
+      "      console.log(lang);",
+      "    });"
+    ],
+    "description": "Observable ปล่อยค่าภาษาที่เปลี่ยน แต่ยังไม่ถูก load นะ"
+  },
+  "i18n-selectTranslation": {
+    "prefix": "i18n-selectTranslation",
+    "body": [
+      "    this.translocoService.selectTranslation().subscribe((translation) => {",
+      "      console.log(translation['hello']);",
+      "    });"
+    ],
+    "description": "Observable ปล่อยตัว translation เมื่อ lang ถูกเปลี่ยน"
+  },
+  "i18n-events$-TranslocoService": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-events$-TranslocoService",
+    "body": [
+      "    this.translocoService.events$",
+      "      .pipe(filter((event) => event.type === 'translationLoadSuccess'))",
+      "      .subscribe((event) => {",
+      "        ${1:const translation = this.translocoService.translate('hello');",
+      "        console.log(translation);}",
+      "      });$0"
+    ],
+    "description": "เมื่อมีการ load ภาษาใหม่ทุกครั้ง จะปล่อย event เข้ามาใน Observable ตัวนี้"
+  },
+  "i18n-getActiveLang": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-getActiveLang",
+    "body": ["const activeLang = this.translocoService.getActiveLang();$0"],
+    "description": "ดึงค่าภาษาที่ใช้งานปัจจุบัน"
+  },
+  "i18n-provider-scope-alias": {
+    "scope": "javascript,typescript",
+    "prefix": "i18n-provider-scope-alias",
+    "body": [
+      "    {",
+      "      provide: TRANSLOCO_SCOPE,",
+      "      useValue: { scope: '${1:todos}', alias: '${2:customName}'  }",
+      "    }"
+    ],
+    "description": "สร้าง provider scope ตั้งชื่อใหม่เป็น alias (ใช้เป็น prefix หน้า template)"
   }
 }
