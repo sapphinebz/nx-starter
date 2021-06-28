@@ -12,7 +12,7 @@ export class HttpService {
     const payload = condition;
     const params = new HttpParams({ fromObject: payload });
     return this.http
-      .get<R>(`${environment.baseUrl}${path}`, { params })
+      .get<R>(`${environment.apiBaseUrl}${path}`, { params })
       .pipe(
         catchError((err) => {
           console.error(err);
@@ -22,7 +22,7 @@ export class HttpService {
   }
 
   post<R = any>(path: string, body: any) {
-    return this.http.post<R>(`${environment.baseUrl}${path}`, body).pipe(
+    return this.http.post<R>(`${environment.apiBaseUrl}${path}`, body).pipe(
       catchError((err) => {
         console.error(err);
         return EMPTY;
@@ -31,7 +31,7 @@ export class HttpService {
   }
 
   postFormData<R = any>(path: string, formData: FormData) {
-    return this.http.post<R>(`${environment.baseUrl}${path}`, formData).pipe(
+    return this.http.post<R>(`${environment.apiBaseUrl}${path}`, formData).pipe(
       catchError((err) => {
         console.error(err);
         return EMPTY;
@@ -40,11 +40,11 @@ export class HttpService {
   }
 
   put<R = any>(path: string, body: any) {
-    return this.http.put<R>(`${environment.baseUrl}${path}`, body);
+    return this.http.put<R>(`${environment.apiBaseUrl}${path}`, body);
   }
 
   patch<R = any>(path: string, body: any) {
-    return this.http.patch<R>(`${environment.baseUrl}${path}`, body);
+    return this.http.patch<R>(`${environment.apiBaseUrl}${path}`, body);
   }
 
   delete<R = any>(path: string, payload?: any) {
@@ -55,9 +55,9 @@ export class HttpService {
         }),
         body: payload,
       };
-      return this.http.delete<R>(`${environment.baseUrl}${path}`, options);
+      return this.http.delete<R>(`${environment.apiBaseUrl}${path}`, options);
     } else {
-      return this.http.delete<R>(`${environment.baseUrl}${path}`);
+      return this.http.delete<R>(`${environment.apiBaseUrl}${path}`);
     }
   }
 
