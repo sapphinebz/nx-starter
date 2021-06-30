@@ -1,0 +1,26 @@
+{
+  "accenture-validators-message": {
+    "prefix": "accenture-validators-message",
+    "scope": "html",
+    "body": [
+      "<ac-accenture-validators-message>",
+      "  <label for=\"${1:username}\">${2:Username}</label>",
+      "  <input",
+      "    [formControl]=\"${3:nameInputForm}\"",
+      "    id=\"${1:username}\"",
+      "    aria-describedby=\"${1:username}-help\"",
+      "    pInputText",
+      "  />",
+      "</ac-accenture-validators-message>$0"
+    ],
+    "description": "ตัวแสดง message จาก formControl อัตโนมัติ"
+  },
+  "accenture-validators-import": {
+    "prefix": "accenture-validators-import",
+    "scope": "javascript,typescript",
+    "body": [
+      "import { AccentureValidatorsModule } from '@web-di-ld/accenture-validators';"
+    ],
+    "description": "import AccentureValidatorsModule ตัวช่วย form และการแสดง message จาก formControl อัตโนมัติ"
+  }
+}

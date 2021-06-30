@@ -25,6 +25,7 @@
 !.vscode/extensions.json
 !.vscode/i18n.code-snippets
 !.vscode/http.code-snippets
+!.vscode/accenture-validators.code-snippets
 
 # misc
 /.sass-cache
