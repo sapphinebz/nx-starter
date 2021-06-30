@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "accenture-validators": {
+      "projectType": "library",
+      "root": "libs/accenture-validators",
+      "sourceRoot": "libs/accenture-validators/src",
+      "prefix": "ac",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accenture-validators"],
+          "options": {
+            "jestConfig": "libs/accenture-validators/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accenture-validators/src/**/*.ts",
+              "libs/accenture-validators/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "api-interface": {
       "root": "libs/api-interface",
       "sourceRoot": "libs/api-interface/src",

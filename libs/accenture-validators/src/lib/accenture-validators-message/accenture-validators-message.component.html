@@ -1,0 +1,15 @@
+<div class="p-field p-fluid">
+  <ng-content></ng-content>
+  <small
+    *ngIf="invalid && touched && ngControl?.control?.hasError('required')"
+    id="require-help"
+    class="p-error"
+    >Field is required</small
+  >
+  <small
+    *ngIf="invalid && touched && ngControl?.control?.hasError('email')"
+    id="email-help"
+    class="p-error"
+    >Email is not valid</small
+  >
+</div>

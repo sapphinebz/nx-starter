@@ -19,6 +19,9 @@
     }
   },
   "projects": {
+    "accenture-validators": {
+      "tags": ["dom", "validator"]
+    },
     "api-interface": {
       "tags": []
     },

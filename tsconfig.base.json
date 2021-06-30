@@ -16,6 +16,9 @@
     "baseUrl": ".",
     "paths": {
       "@environments/*": ["apps/di-ld/src/environments/*"],
+      "@web-di-ld/accenture-validators": [
+        "libs/accenture-validators/src/index.ts"
+      ],
       "@web-di-ld/api-interface": ["libs/api-interface/src/index.ts"],
       "@web-di-ld/apps/http": ["libs/apps/http/src/index.ts"]
     }

@@ -1,4 +1,50 @@
-<div>Hello Angular with NX Workspace</div>
+<ac-accenture-validators-message>
+  <label for="username">Username</label>
+  <input
+    [formControl]="nameInputForm"
+    id="username"
+    type="username"
+    aria-describedby="username-help"
+    pInputText
+  />
+</ac-accenture-validators-message>
+
+<ac-accenture-validators-message>
+  <label for="password">Password</label>
+  <input
+    [formControl]="passwordInputForm"
+    id="password"
+    type="password"
+    aria-describedby="password-help"
+    pInputText
+  />
+</ac-accenture-validators-message>
+
+<ac-accenture-validators-message>
+  <label for="email">Email</label>
+  <input
+    [formControl]="emailInputForm"
+    id="email"
+    type="email"
+    aria-describedby="email-help"
+    pInputText
+  />
+</ac-accenture-validators-message>
+
+<ac-accenture-validators-message>
+  <label for="quality">Quality</label>
+  <input
+    [formControl]="qualityInputForm"
+    id="quality"
+    type="quality"
+    aria-describedby="quality-help"
+    pInputText
+  />
+</ac-accenture-validators-message>
+
+<!-- {{ emailInputForm.errors | json }} -->
+
+<!-- <div>Hello Angular with NX Workspace</div>
 
 <img style="width: 200px" src="/assets/images/angular.svg" alt="angular" />
 
@@ -17,4 +63,4 @@
   <div *ngFor="let pokemon of pokemon$ | async">
     {{ pokemon.name }}
   </div>
-</div>
+</div> -->

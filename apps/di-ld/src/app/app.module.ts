@@ -11,6 +11,11 @@ import { UiLoadingService } from './ui-loading/ui-loading.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { environment } from '../environments/environment';
 import { ButtonModule } from 'primeng/button';
+import { AccentureValidatorsModule } from '@web-di-ld/accenture-validators';
+import { InputTextModule } from 'primeng/inputtext';
+import { MessagesModule } from 'primeng/messages';
+import { MessageModule } from 'primeng/message';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -22,6 +27,11 @@ import { ButtonModule } from 'primeng/button';
     AppRoutingModule,
     ReactiveFormsModule,
     ButtonModule,
+    InputTextModule,
+    AccentureValidatorsModule,
+    MessagesModule,
+    MessageModule,
+    ReactiveFormsModule,
   ],
   providers: [UiLoadingService],
   bootstrap: [AppComponent],
