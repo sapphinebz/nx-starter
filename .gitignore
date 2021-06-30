@@ -26,6 +26,7 @@
 !.vscode/i18n.code-snippets
 !.vscode/http.code-snippets
 !.vscode/accenture-validators.code-snippets
+!.vscode/accenture-responsive.code-snippets
 
 # misc
 /.sass-cache

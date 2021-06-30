@@ -1,0 +1,7 @@
+{
+  "accenture-responsive-ViewportSize": {
+    "prefix": "accenture-responsive-ViewportSize-directive",
+    "body": ["*acViewportSize=\"'${1|sm,md,lg,xl|}'\""],
+    "description": "สร้างการแสดงผลตาม viewport size ด้วย directive"
+  }
+}
