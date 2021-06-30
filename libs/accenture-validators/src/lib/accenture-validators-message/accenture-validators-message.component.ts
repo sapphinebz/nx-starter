@@ -12,8 +12,7 @@ import { NgControl } from '@angular/forms';
   styleUrls: ['./accenture-validators-message.component.css'],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AccentureValidatorsMessageComponent
-  implements OnInit, AfterContentInit {
+export class AccentureValidatorsMessageComponent implements OnInit {
   @ContentChild(NgControl) ngControl!: NgControl;
 
   get invalid() {
@@ -25,10 +24,6 @@ export class AccentureValidatorsMessageComponent
   }
 
   constructor() {}
-
-  ngAfterContentInit(): void {
-    console.log(this.ngControl);
-  }
 
   ngOnInit(): void {}
 }

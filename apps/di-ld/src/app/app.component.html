@@ -64,3 +64,9 @@
     pInputText
   />
 </ac-accenture-validators-message>
+
+<h2>loadImage by Directive</h2>
+<p-button label="loadImage" (onClick)="switchImage()"></p-button>
+<div *acHttpImage="let url of imageUrl">
+  <img [src]="url" alt="Hello" />
+</div>

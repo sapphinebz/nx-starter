@@ -19,6 +19,9 @@
     }
   },
   "projects": {
+    "accenture-image": {
+      "tags": []
+    },
     "accenture-validators": {
       "tags": ["dom", "validator"]
     },

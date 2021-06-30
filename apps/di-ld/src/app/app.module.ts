@@ -15,6 +15,7 @@ import { AccentureValidatorsModule } from '@web-di-ld/accenture-validators';
 import { InputTextModule } from 'primeng/inputtext';
 import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
+import { AccentureImageModule } from '@web-di-ld/accenture-image';
 
 @NgModule({
   declarations: [AppComponent],
@@ -32,6 +33,7 @@ import { MessageModule } from 'primeng/message';
     MessagesModule,
     MessageModule,
     ReactiveFormsModule,
+    AccentureImageModule,
   ],
   providers: [UiLoadingService],
   bootstrap: [AppComponent],

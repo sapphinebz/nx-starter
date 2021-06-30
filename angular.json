@@ -1,6 +1,31 @@
 {
   "version": 1,
   "projects": {
+    "accenture-image": {
+      "projectType": "library",
+      "root": "libs/accenture-image",
+      "sourceRoot": "libs/accenture-image/src",
+      "prefix": "ac",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accenture-image"],
+          "options": {
+            "jestConfig": "libs/accenture-image/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accenture-image/src/**/*.ts",
+              "libs/accenture-image/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "accenture-validators": {
       "projectType": "library",
       "root": "libs/accenture-validators",

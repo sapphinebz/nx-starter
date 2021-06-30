@@ -23,9 +23,20 @@ export class AppComponent {
   pokemon$ = this.stateService.pokemon$.pipe(
     map((response) => response.results)
   );
+
+  backUrl =
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/132.png';
+  frontUrl =
+    'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png';
+  imageUrl = this.frontUrl;
   constructor(private stateService: AppStateService) {}
 
   sendRequest() {
     this.stateService.nextPage();
+  }
+
+  switchImage() {
+    this.imageUrl =
+      this.imageUrl === this.frontUrl ? this.backUrl : this.frontUrl;
   }
 }
