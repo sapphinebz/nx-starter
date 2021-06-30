@@ -1,1 +1,7 @@
-{}
+{
+  "hello": "สวัสดี",
+  "appleCount": "แอปเปิ้ล {{count}} ลูก",
+  "dashboard": {
+    "header": "หัวข้อ dashboard"
+  }
+}

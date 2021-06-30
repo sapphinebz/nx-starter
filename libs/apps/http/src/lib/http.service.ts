@@ -1,18 +1,27 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { environment } from '@environments/environment';
+import { Inject, Injectable } from '@angular/core';
 import { EMPTY } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 @Injectable()
 export class HttpService {
-  constructor(public http: HttpClient) {}
+  get apiBaseUrl() {
+    if (!this.environment) {
+      return '';
+    }
+    return this.environment.apiBaseUrl ?? '';
+  }
+
+  constructor(
+    public http: HttpClient,
+    @Inject('environment') private environment: any
+  ) {}
 
   get<R = any>(path: string, condition: { [params: string]: any } = {}) {
     const payload = condition;
     const params = new HttpParams({ fromObject: payload });
     return this.http
-      .get<R>(`${environment.apiBaseUrl}${path}`, { params })
+      .get<R>(`${this.apiBaseUrl}${path}`, { params })
       .pipe(
         catchError((err) => {
           console.error(err);
@@ -22,7 +31,7 @@ export class HttpService {
   }
 
   post<R = any>(path: string, body: any) {
-    return this.http.post<R>(`${environment.apiBaseUrl}${path}`, body).pipe(
+    return this.http.post<R>(`${this.apiBaseUrl}${path}`, body).pipe(
       catchError((err) => {
         console.error(err);
         return EMPTY;
@@ -31,7 +40,7 @@ export class HttpService {
   }
 
   postFormData<R = any>(path: string, formData: FormData) {
-    return this.http.post<R>(`${environment.apiBaseUrl}${path}`, formData).pipe(
+    return this.http.post<R>(`${this.apiBaseUrl}${path}`, formData).pipe(
       catchError((err) => {
         console.error(err);
         return EMPTY;
@@ -40,11 +49,11 @@ export class HttpService {
   }
 
   put<R = any>(path: string, body: any) {
-    return this.http.put<R>(`${environment.apiBaseUrl}${path}`, body);
+    return this.http.put<R>(`${this.apiBaseUrl}${path}`, body);
   }
 
   patch<R = any>(path: string, body: any) {
-    return this.http.patch<R>(`${environment.apiBaseUrl}${path}`, body);
+    return this.http.patch<R>(`${this.apiBaseUrl}${path}`, body);
   }
 
   delete<R = any>(path: string, payload?: any) {
@@ -55,9 +64,9 @@ export class HttpService {
         }),
         body: payload,
       };
-      return this.http.delete<R>(`${environment.apiBaseUrl}${path}`, options);
+      return this.http.delete<R>(`${this.apiBaseUrl}${path}`, options);
     } else {
-      return this.http.delete<R>(`${environment.apiBaseUrl}${path}`);
+      return this.http.delete<R>(`${this.apiBaseUrl}${path}`);
     }
   }
 

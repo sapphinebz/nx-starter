@@ -7,6 +7,10 @@ import { TranslocoRootModule } from './transloco/transloco-root.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppsHttpModule } from '@web-di-ld/apps/http';
 import { AppRoutingModule } from './app-routing.module';
+import { UiLoadingService } from './ui-loading/ui-loading.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { environment } from '../environments/environment';
+import { ButtonModule } from 'primeng/button';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,10 +18,12 @@ import { AppRoutingModule } from './app-routing.module';
     HttpClientModule,
     TranslocoRootModule,
     BrowserAnimationsModule,
-    AppsHttpModule,
+    AppsHttpModule.forEnvironment(environment),
     AppRoutingModule,
+    ReactiveFormsModule,
+    ButtonModule,
   ],
-  providers: [],
+  providers: [UiLoadingService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
