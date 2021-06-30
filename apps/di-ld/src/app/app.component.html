@@ -1,3 +1,26 @@
+<div>Hello Angular with NX Workspace</div>
+
+<img style="width: 200px" src="/assets/images/angular.svg" alt="angular" />
+
+<div>
+  <h2>Pokemon</h2>
+  <div>
+    <p-button
+      label="loadPokemonByState"
+      (onClick)="sendRequest()"
+      icon="pi pi-search"
+      iconPos="left"
+    ></p-button>
+  </div>
+</div>
+<div>
+  <div *ngFor="let pokemon of pokemon$ | async">
+    {{ pokemon.name }}
+  </div>
+</div>
+
+<h2>Example Validators Form</h2>
+
 <ac-accenture-validators-message>
   <label for="username">Username</label>
   <input
@@ -41,26 +64,3 @@
     pInputText
   />
 </ac-accenture-validators-message>
-
-<!-- {{ emailInputForm.errors | json }} -->
-
-<!-- <div>Hello Angular with NX Workspace</div>
-
-<img style="width: 200px" src="/assets/images/angular.svg" alt="angular" />
-
-<div>
-  <h2>Pokemon</h2>
-  <div>
-    <p-button
-      label="loadPokemonByState"
-      (onClick)="sendRequest()"
-      icon="pi pi-search"
-      iconPos="left"
-    ></p-button>
-  </div>
-</div>
-<div>
-  <div *ngFor="let pokemon of pokemon$ | async">
-    {{ pokemon.name }}
-  </div>
-</div> -->
