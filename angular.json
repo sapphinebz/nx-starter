@@ -26,6 +26,31 @@
         }
       }
     },
+    "accenture-responsive": {
+      "projectType": "library",
+      "root": "libs/accenture-responsive",
+      "sourceRoot": "libs/accenture-responsive/src",
+      "prefix": "ac",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/accenture-responsive"],
+          "options": {
+            "jestConfig": "libs/accenture-responsive/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/accenture-responsive/src/**/*.ts",
+              "libs/accenture-responsive/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
     "accenture-validators": {
       "projectType": "library",
       "root": "libs/accenture-validators",

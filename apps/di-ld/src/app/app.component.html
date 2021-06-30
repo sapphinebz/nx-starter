@@ -70,3 +70,23 @@
 <div *acHttpImage="let url of imageUrl">
   <img [src]="url" alt="Hello" />
 </div>
+
+<h2>Responsive with directive</h2>
+<img
+  *acViewportSize="'xl'"
+  src="https://imgflip.com/s/meme/Sexy-Cat.jpg"
+  alt="chiba"
+/>
+<img
+  *acViewportSize="'lg'"
+  style="width: 350px"
+  src="https://imgflip.com/s/meme/Excited-Cat.jpg"
+  alt="chiba"
+/>
+<img
+  *acViewportSize="'md'"
+  style="width: 330px"
+  src="https://imgflip.com/s/meme/Grumpy-Cat-Not-Amused.jpg"
+  alt="chiba"
+/>
+<img *acViewportSize="'sm'" src="https://i.imgflip.com/2/2hgfw.jpg" alt="cat" />

@@ -22,6 +22,9 @@
     "accenture-image": {
       "tags": []
     },
+    "accenture-responsive": {
+      "tags": ["dom"]
+    },
     "accenture-validators": {
       "tags": ["dom", "validator"]
     },

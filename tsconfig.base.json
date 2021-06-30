@@ -17,6 +17,9 @@
     "paths": {
       "@environments/*": ["apps/di-ld/src/environments/*"],
       "@web-di-ld/accenture-image": ["libs/accenture-image/src/index.ts"],
+      "@web-di-ld/accenture-responsive": [
+        "libs/accenture-responsive/src/index.ts"
+      ],
       "@web-di-ld/accenture-validators": [
         "libs/accenture-validators/src/index.ts"
       ],
