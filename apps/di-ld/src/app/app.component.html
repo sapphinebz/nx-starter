@@ -90,3 +90,11 @@
   alt="chiba"
 />
 <img *acViewportSize="'sm'" src="https://i.imgflip.com/2/2hgfw.jpg" alt="cat" />
+
+<h2>Paste Image</h2>
+
+<div acOnPasteImage #pasteImage="acOnPasteImage">
+  <ng-container *ngFor="let file of pasteImage.files">
+    <img [src]="file | fileToImageUrl | async" alt="description" />
+  </ng-container>
+</div>
