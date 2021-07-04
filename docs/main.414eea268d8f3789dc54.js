@@ -15190,7 +15190,7 @@
             consts: [
               [
                 'src',
-                '/assets/images/angular.svg',
+                'assets/images/angular.svg',
                 'alt',
                 'angular',
                 2,
