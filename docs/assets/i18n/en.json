@@ -1,7 +1,0 @@
-{
-  "hello": "Hello friend",
-  "appleCount": "apple {{count}} appleCount",
-  "dashboard": {
-    "header": "header dashboard"
-  }
-}
