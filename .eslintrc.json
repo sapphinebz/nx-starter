@@ -21,7 +21,7 @@
         ],
         "@typescript-eslint/no-empty-function": [
           "error",
-          { "allow": ["constructors"] }
+          { "allow": ["constructors", "method"] }
         ]
       }
     },
